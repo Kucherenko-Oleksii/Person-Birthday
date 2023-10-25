@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/css/style.css" />
+    <script src="./script.js" defer></script>
+    <title>Person Information</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Оберіть дату народження</h1>
+      <form id="searchForm">
+        <div class="form-group">
+          <label for="startDate" class="label-data">Від:</label>
+          <input type="date" id="startDate" class="input-data" required />
+        </div>
+        <div class="form-group">
+          <label for="endDate" class="label-data">До:</label>
+          <input type="date" id="endDate" class="input-data" required />
+        </div>
+        <button type="submit">Пошук</button>
+      </form>
+    </div>
+    <div id="results"></div>
+  </body>
+</html>

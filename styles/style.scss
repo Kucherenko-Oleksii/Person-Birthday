@@ -1,0 +1,174 @@
+@import "./variables/variables";
+@import "./functions/mixins";
+
+body {
+  font-family: $font-family;
+  font-size: 16px;
+
+  color: $primary-color;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  @include box-shadow;
+
+  &:hover {
+    @include box-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  }
+}
+
+#searchForm {
+  @include flex-center;
+  width: 100%;
+  flex-direction: row;
+  transition: all $transition-duration;
+  padding: 1rem;
+}
+
+.label-data {
+  margin-right: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+
+.input-data {
+  font-family: $font-family;
+  width: 15rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: $primary-color;
+  border-radius: 4px;
+  transition: border-color $transition-duration, box-shadow $transition-duration;
+  box-shadow: 0 0 0 transparent;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    border-color: $input-focus-color;
+    @include box-shadow($input-focus-box-shadow);
+  }
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+button {
+  width: 10rem;
+  margin: 0.5rem 0;
+  padding: 10px;
+  background-color: $button-background;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: $button-hover-background;
+  }
+}
+
+#results {
+  max-width: $results-max-width;
+  margin: 4rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#results div {
+  width: 20rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background: linear-gradient(
+    45deg,
+    $results-gradient-start,
+    $results-gradient-end
+  );
+  margin-bottom: 2rem;
+  padding: 2rem;
+  @include box-shadow;
+
+  &:hover {
+    @include box-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    background: linear-gradient(
+      45deg,
+      $results-hover-gradient-start,
+      $results-hover-gradient-end
+    );
+  }
+}
+
+img {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  #searchForm {
+    flex-direction: column;
+  }
+
+  .label-data,
+  .input-data,
+  button {
+    margin: 0.5rem 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #results div {
+    width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  #searchForm {
+    flex-direction: column;
+  }
+
+  .label-data,
+  .input-data,
+  button {
+    margin: 0.5rem 0;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #results div {
+    width: 100%;
+  }
+}
